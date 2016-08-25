@@ -6,6 +6,7 @@ module.exports = function(grunt) {
       js: {src: ['./src/js/scripts.js'],
         dest: './dist/app.js'},
       options: {
+        paths: ['./node_modules','./src/js'],
         transform: ['hbsfy']}
     },
     jshint: {
@@ -62,7 +63,7 @@ module.exports = function(grunt) {
       }
     },
     hbs: {
-      files: ['./templates/**/*.hbs'],
+      files: ['./src/templates/**/*.hbs'],
       tasks: ['browserify']
     }
   });

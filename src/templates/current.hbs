@@ -1,0 +1,28 @@
+{{#if name}}
+  Location: {{name}}<br>
+  Temperature: {{main.tempF}} Fahrenheit<br>
+  Condition: {{weather.0.main}}?<br>
+  Air Pressure: {{main.pressure}}<br>
+  Wind Speed: {{wind.speed}} mph<br>
+  <button type="button" id="saveButton">Save this Forecast</button>
+  <button type="button" id="get5DayButton">Get 5-Day Forecast</button>
+{{else if list}}
+  Location: {{city.name}}<br>
+  {{#each list}}
+    Temperature: {{this.main.temp}} Kelvins<br>
+    Condition: {{this.weather.0.main}}?<br>
+    Air Pressure: {{this.main.pressure}}<br>
+    Wind Speed: {{this.wind.speed}} mph<br>
+    Timestampe: {{this.dt_txt}}<br>
+    <br>
+  {{/each}}
+{{else}}
+  {{#each this}}
+  Location: {{name}}<br>
+  Temperature: {{main.temp}} Kelvins<br>
+  Condition: {{weather.0.main}}?<br>
+  Air Pressure: {{main.pressure}}<br>
+  Wind Speed: {{wind.speed}} mph<br>
+  <br>
+  {{/each}}
+{{/if}}
